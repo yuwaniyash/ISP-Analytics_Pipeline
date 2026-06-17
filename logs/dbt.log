@@ -1,0 +1,12 @@
+[0m18:12:34.294912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002260E2823C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022610A37D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022610A37750>]}
+
+
+============================== 18:12:34.335611 | b0ff041b-9f10-4139-9352-1deaf3e6d48c ==============================
+[0m18:12:34.335611 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m18:12:34.336609 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init dbt_project', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:12:34.384237 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\ASUS\.dbt
+[0m18:12:34.387205 [info ] [MainThread]: A project called dbt_project already exists here.
+[0m18:12:34.388933 [debug] [MainThread]: Command `dbt init` succeeded at 18:12:34.388598 after 0.49 seconds
+[0m18:12:34.389684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022610A43A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226108497F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022610A02580>]}
+[0m18:12:34.390429 [debug] [MainThread]: Flushing usage events
+[0m18:12:36.237586 [debug] [MainThread]: An error was encountered while trying to flush usage events

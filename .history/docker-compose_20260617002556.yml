@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: isp_postgres
+    environment:
+      POSTGRES_USER: isp_user
+      POSTGRES_PASSWORD: isp_pass
+      POSTGRES_DB: isp_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  airflow:
+    image: apache/airflow:2.8.1
+    container_name: isp_airflow
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://isp_user:isp_pass@postgres/isp_db
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./airflow:/opt/airflow/dags
+    depends_on:
+      - postgres
+    command: >
+      bash -c "airflow db migrate && airflow users create
+      --username admin --password admin
+      --firstname Admin --lastname User
+      --role Admin --email admin@example.com
+      && airflow webserver & airflow scheduler"
+  grafana:
+    image: grafana/grafana:latest
+    container_name: isp_grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  postgres_data:
+  grafana_data:

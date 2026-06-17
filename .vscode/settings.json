@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "isp_db",
+            "group": "localhost",
+            "database": "isp_db",
+            "username": "isp_user",
+            "password": "isp_pass"
+        }
+    ]
+}
