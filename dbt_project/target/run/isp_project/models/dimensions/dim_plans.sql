@@ -2,7 +2,7 @@
   
     
 
-  create  table "isp_db"."public"."dim_plans__dbt_tmp"
+  create  table "postgres"."public"."dim_plans__dbt_tmp"
   
   
     as
@@ -31,7 +31,7 @@
         WHEN plan = 'Ultra_200Mbps' THEN 5999
     END AS monthly_price_lkr
 FROM (
-    SELECT DISTINCT plan, plan_tier FROM "isp_db"."public"."stg_customers"
+    SELECT DISTINCT plan, plan_tier FROM "postgres"."public"."stg_customers"
 ) plans
 ORDER BY plan_tier
   );

@@ -12,6 +12,6 @@ SELECT
     TO_CHAR(date, 'Day') AS day_of_week,
     EXTRACT(ISODOW FROM date) AS day_number
 FROM (
-    SELECT DISTINCT date FROM "isp_db"."public"."stg_usage_logs"
+    SELECT DISTINCT date FROM "postgres"."public"."stg_usage_logs"
 ) dates
 ORDER BY date

@@ -1,0 +1,17 @@
+name: 'isp_project'
+version: '1.0.0'
+profile: 'isp_project'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  isp_project:
+    staging:
+      +materialized: view
+    dimensions:
+      +materialized: table
+    facts:
+      +materialized: table
+   +materialized: table
